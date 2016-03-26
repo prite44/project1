@@ -1,0 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="../jsp/fragments/header.jsp"%>
+<script src="/public/lib/bootstrap-3.1.1/js/stock/stock.js"></script>
+<div class="container" ng-app="Stock">
+<div class="container main-content" ng-controller="MainStock">
+test
+</div>
+<%@include file="../jsp/fragments/footer.jsp"%>

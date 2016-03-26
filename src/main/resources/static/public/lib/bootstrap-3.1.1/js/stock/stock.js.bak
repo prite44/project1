@@ -1,0 +1,38 @@
+'use strict';
+App.service('ContactService',['StockService',function(StockService){
+	return {'person':[{'name':'k70','quality':'20','price1':'100','price2':'110','price3':'115'}
+	,{'name':'k72','quality':'30','price1':'105','price2':'115','price3':'125'}
+	,{'name':'k73','quality':'40','price1':'110','price2':'120','price3':'135'}
+	,{'name':'k74','quality':'50','price1':'115','price2':'130','price3':'145'}];
+	};
+
+}]);
+App.controller('StockController', ['$scope', 'StockService','$rootScope', function($scope, StockService,$rootScope) {
+	$scope.products=[{'name':'k70','quality':'20','price1':'100','price2':'110','price3':'115'}
+	,{'name':'k72','quality':'30','price1':'105','price2':'115','price3':'125'}
+	,{'name':'k73','quality':'40','price1':'110','price2':'120','price3':'135'}
+	,{'name':'k74','quality':'50','price1':'115','price2':'130','price3':'145'}];
+	$scope.order ="quality";
+	$scope.search = "";
+	$scope.order = "quality";
+	$rootScope.selectProduct=null;
+	$scope.selectProductIndex = function(product){
+		$rootScope.selectProduct = product;
+	};
+	//search
+	$scope.sensitiveSearch = function (product) {
+		if ($scope.search) {
+			return product.name.indexOf($scope.search) == 0;
+		}
+		return true;
+	};
+	
+	//loadmode
+	$scope.loadMore = function(){
+		console.log("Load more!!");
+	};
+	
+}]);
+App.controller('StockDetail', function ($scope,$rootScope) {
+	
+});
